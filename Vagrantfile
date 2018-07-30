@@ -17,9 +17,13 @@ Vagrant.configure("2") do |config|
   #config.vm.network "private_network", ip: "192.168.33.10"
 
   # Folder Settings
-  config.vm.synced_folder ".", "/var/www/html", type: "smb"
+  config.vm.synced_folder ".", "/vagrant", type: "smb"
+  config.vm.synced_folder "src/", "/var/www/html", type: "smb"
 
   # Provisions
-  config.vm.provision "shell", path: "bootstrap.sh"
+  config.vm.provision "shell", path: "bootstrap.sh" 
+  config.vm.provision "shell", inline: <<-SHELL
+    mysql --user=root --password=root < /vagrant/seed.sql
+  SHELL
   
 end
