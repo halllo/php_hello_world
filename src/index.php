@@ -8,7 +8,7 @@
 </head>
 <body>
   <h1>Hallo Welt!</h1>
-  <!-- <?php phpinfo(); ?> -->
+  <?php phpinfo(); ?>
   <?php
     $dbhost = 'localhost:3306';
     $dbuser = 'root';

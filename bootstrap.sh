@@ -28,6 +28,7 @@ apt-get install -y php7.2-common
 apt-get install -y php7.2-zip
 apt-get install -y php7.2-mysql
 apt-get install -y php7.2-mbstring
+apt-get install -y php7.2-xdebug
 
 # Install phpmyadmin
 debconf-set-selections <<< "phpmyadmin phpmyadmin/dbconfig-install boolean true"
